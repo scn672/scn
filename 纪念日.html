@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水草泥和泥宝的恋爱时光-纪念日</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        :root {
+            --primary-color: #4a9d8c;
+            --secondary-color: #7fffd4;
+            --accent-color: #ff6b6b;
+            --text-color: #717171;
+            --light-bg: #f5f5f5;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --header-height: 80px;
+            --transition: all 0.3s ease;
+        }
+
+        /* 重置与基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 1440px;
+            margin: 0 auto;
+            background: var(--light-bg);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 背景装饰元素 */
+        .decoration {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .decoration.heart {
+            font-size: 8rem;
+            color: var(--accent-color);
+            top: 15%;
+            left: 5%;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .decoration.heart-2 {
+            font-size: 6rem;
+            color: var(--primary-color);
+            bottom: 20%;
+            right: 4%;
+            animation: float 10s infinite ease-in-out 1s;
+        }
+
+        .decoration.circle {
+            width: 120px;
+            height: 120px;
+            border: 8px solid var(--secondary-color);
+            border-radius: 50%;
+            top: 25%;
+            right: 10%;
+            animation: pulse 6s infinite ease-in-out;
+        }
+
+        /* 头部样式 */
+        header {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1350px;
+            height: var(--header-height);
+            margin: 0 auto;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav h2 {
+            color: white;
+            margin: auto 0;
+            flex-shrink: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-box {
+            display: flex;
+            flex-grow: 1;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            font-size: 1.4rem;
+            padding: 10px 25px;
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link i {
+            margin-right: 8px;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .img-box {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 5px 15px;
+            transition: var(--transition);
+        }
+
+        .img-box:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-3px);
+        }
+
+
+        .info-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .info-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .img-box h3 {
+            color: white;
+            margin: 0 0 0 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .img-box2 {
+            display: grid;
+            /* 网格布局 */
+            grid-template-columns: repeat(4, minmax(200px, 1fr));
+            /* 4列响应式网格 */
+            gap: 20px;
+            /* 网格间距 */
+            margin: 0 auto;
+            /* 水平居中 */
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 5px 15px;
+            transition: var(--transition);
+        }
+
+        .img-box2:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-3px);
+        }
+
+        .img-box2 img {
+            width: 200px;
+            height: 200px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .img-box2 p {
+            text-indent: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .time {
+            text-align: right;
+        }
+
+        .img-box2 h2 {
+            text-align: center;
+            margin: auto;
+
+        }
+
+        .wenben-box {
+            width: 100%;
+        }
+
+
+        /* 主内容区样式 */
+        .container {
+            background: var(--card-bg);
+            padding: 40px;
+            max-width: 1200px;
+            width: 90%;
+
+            position: relative;
+            overflow: hidden;
+            margin: 30px auto;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .footer2 {
+            padding: 20px;
+            text-align: center;
+            font-size: 1.6rem;
+            color: white;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="decoration heart">❤</div>
+    <div class="decoration heart-2">❤</div>
+    <div class="decoration circle"></div>
+
+    <header>
+        <nav>
+            <h2>水草泥和泥宝.</h2>
+            <div class="nav-box">
+                <a class="nav-link" href="首页.html"><i class="fas fa-house"></i> 首页</a>
+                <a class="nav-link" href="纪念日.html"><i class="fas fa-calendar-days"></i> 纪念日</a>
+                <a class="nav-link" href="相册.html"><i class="fas fa-image"></i> 相册</a>
+            </div>
+            <div class="img-box">
+                <div class="info-item">
+                    <img src="P/水草泥.jpg" alt="水草泥">
+                </div>
+                <div class="info-item">
+                    <h3>水草泥.</h3>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="img-box2">
+            <div>
+                <img src="P/图片 (10).jpg" alt="图片">
+            </div>
+            <div class="wenben-box">
+                <h2>在一起！</h2>
+                <p class="wenben">
+                    今天和泥宝逛了动物园，晚上和泥宝逛学校，上课的路真的好远，她好厉害，最后要走的时候，我说我们是什么关系，她说那我们一起承担风险，牵手的感觉是热热的湿湿的，因为喜欢溢出在掌心里，也因为我们都很紧张。
+                </p>
+                <p class="time">2025年4月12日</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="img-box2">
+            <div>
+                <img src="P/图片 (6).jpg" alt="图片">
+            </div>
+            <div class="wenben-box">
+                <h2>第一次约会！</h2>
+                <p class="wenben">商务风海洋馆吗？有点意思。</p>
+                <p class="time">2025年5月3日</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="img-box2">
+            <div>
+                <img src="P/图片 (3).jpg" alt="图片">
+            </div>
+            <div class="wenben-box">
+                <h2>高考约会！</h2>
+                <p class="wenben">完蛋了，高考和泥宝睡觉睡过头了，算了继续睡，外面的天空是什么样的呢？不重要了，爱你，泥宝。明天见！</p>
+                <p class="time">2025年6月9日</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="img-box2">
+            <div>
+                <img src="P/图片(29).jpg" alt="图片">
+            </div>
+            <div class="wenben-box">
+                <h2>相遇驾校！</h2>
+                <p class="wenben">我重生了，重生在考科目三的时候，上一世我因超强的驾驶天赋引起他人的嫉妒，被资本做局连环追尾吊销驾照。这一世我将夺回属于我的一切！</p>
+                <p class="time">2025年6月28日</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="img-box2">
+            <div>
+                <img src="P/图片(33).jpg" alt="图片">
+            </div>
+            <div class="wenben-box">
+                <h2>窗外！</h2>
+                <p class="wenben">为什么要拍脏脏的车窗，因为窗外是我的泥宝。</p>
+                <p class="time">2025年6月29日</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="img-box2">
+            <div>
+                <img src="P/图片(25).png" alt="图片">
+            </div>
+            <div class="wenben-box">
+                <h2>多幸运！</h2>
+                <p class="wenben">我想我遇到了一个很好的人(=^･^=)</p>
+                <p class="time">2025年7月7日</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer2">
+        <p>SCN ❤ LSM</p>
+    </div>
+</body>
+
+</html>
